@@ -3,6 +3,7 @@ import { useEffect } from "react";
 /** Adds the `visible` class to `.reveal` / `.reveal-scale` elements as they enter view. */
 export function useReveal(deps: unknown[] = []) {
   useEffect(() => {
+    console.log("[reveal] init");
     const elements = Array.from(
       document.querySelectorAll<HTMLElement>(".reveal, .reveal-scale"),
     );
