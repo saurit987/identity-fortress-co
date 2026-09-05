@@ -56,7 +56,6 @@ const services = [
 ];
 
 function Index() {
-  console.log("[index] render");
   useReveal();
 
   return (
