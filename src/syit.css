@@ -3199,8 +3199,8 @@ button {
 }
 
 /* Content stays visible if JS never runs (crawlers, no-JS, slow hydration) */
-html:not(.js) .reveal,
-html:not(.js) .reveal-scale {
+html:not([data-js]) .reveal,
+html:not([data-js]) .reveal-scale {
   opacity: 1;
   transform: none;
 }
