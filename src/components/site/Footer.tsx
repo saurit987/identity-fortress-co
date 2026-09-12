@@ -9,7 +9,10 @@ export function Footer() {
             <Link to="/" className="brand">
               <span className="brand__mark">SYIT</span>
             </Link>
-            <p>Security infrastructure for teams moving fast — and for people protecting their own data.</p>
+            <p>
+              Security infrastructure for teams moving fast — and for people protecting their own
+              data.
+            </p>
           </div>
 
           <div className="footer__links">

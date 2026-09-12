@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FinalCta } from "@/components/site/FinalCta";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/individuals")({
   head: () => ({
@@ -57,6 +58,7 @@ const helps = [
 
 function IndividualsPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -15,7 +16,8 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact SYIT" },
       {
         property: "og:description",
-        content: "A useful first conversation about your security and privacy risks — no sales pitch.",
+        content:
+          "A useful first conversation about your security and privacy risks — no sales pitch.",
       },
     ],
   }),
@@ -24,6 +26,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   useReveal();
+  useScrollStory();
   const [status, setStatus] = useState<string | null>(null);
 
   return (
@@ -45,8 +48,8 @@ function ContactPage() {
               Tell us what keeps you <em>up at night.</em>
             </h2>
             <p>
-              Whether you're a founder preparing for a security review or an individual dealing with a
-              compromised account, start here.
+              Whether you're a founder preparing for a security review or an individual dealing with
+              a compromised account, start here.
             </p>
 
             <div className="contact__details">
@@ -77,7 +80,14 @@ function ContactPage() {
               <div className="contact-form__row">
                 <div className="field">
                   <label htmlFor="name">Name</label>
-                  <input id="name" name="name" type="text" placeholder="Your name" autoComplete="name" required />
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Your name"
+                    autoComplete="name"
+                    required
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="email">Email</label>
@@ -96,7 +106,13 @@ function ContactPage() {
                 <label htmlFor="company">
                   Company <span>Optional</span>
                 </label>
-                <input id="company" name="company" type="text" placeholder="Company name" autoComplete="organization" />
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  placeholder="Company name"
+                  autoComplete="organization"
+                />
               </div>
 
               <div className="field">
@@ -114,7 +130,9 @@ function ContactPage() {
                 <span>↗</span>
               </button>
 
-              <p className="contact-form__note">No sales pitch. Just a useful first conversation.</p>
+              <p className="contact-form__note">
+                No sales pitch. Just a useful first conversation.
+              </p>
             </form>
 
             <div aria-live="polite" style={{ marginTop: 16, fontSize: ".9rem", opacity: 0.8 }}>

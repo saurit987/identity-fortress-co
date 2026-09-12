@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FinalCta } from "@/components/site/FinalCta";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/why-us")({
   head: () => ({
@@ -15,7 +16,8 @@ export const Route = createFileRoute("/why-us")({
       { property: "og:title", content: "Why SYIT is useful" },
       {
         property: "og:description",
-        content: "Prioritised findings, faster security reviews, and privacy built in rather than bolted on.",
+        content:
+          "Prioritised findings, faster security reviews, and privacy built in rather than bolted on.",
       },
     ],
   }),
@@ -76,6 +78,7 @@ const faqs = [
 
 function WhyUsPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>

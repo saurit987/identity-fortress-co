@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -12,7 +13,10 @@ export const Route = createFileRoute("/terms")({
           "The terms governing use of the SYIT website and our cybersecurity consulting engagements: scope, authorisation, confidentiality, fees and liability.",
       },
       { property: "og:title", content: "Terms & Conditions — SYIT" },
-      { property: "og:description", content: "Terms for using this website and engaging SYIT for security work." },
+      {
+        property: "og:description",
+        content: "Terms for using this website and engaging SYIT for security work.",
+      },
     ],
   }),
   component: TermsPage,
@@ -20,6 +24,7 @@ export const Route = createFileRoute("/terms")({
 
 function TermsPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>
@@ -35,8 +40,8 @@ function TermsPage() {
           <div className="prose reveal">
             <h2>1. Acceptance</h2>
             <p>
-              By using this website or engaging our services, you agree to these terms. If you do not
-              agree, please do not use the site or our services.
+              By using this website or engaging our services, you agree to these terms. If you do
+              not agree, please do not use the site or our services.
             </p>
 
             <h2>2. Nature of our services</h2>
@@ -58,8 +63,8 @@ function TermsPage() {
             <h2>4. Scope and changes</h2>
             <p>
               Each engagement has a written scope, timeline and deliverable. Work outside that scope
-              is quoted separately. Either party may request a change; changes take effect once agreed
-              in writing.
+              is quoted separately. Either party may request a change; changes take effect once
+              agreed in writing.
             </p>
 
             <h2>5. Your responsibilities</h2>
@@ -108,8 +113,8 @@ function TermsPage() {
             <h2>11. Website use</h2>
             <p>
               Do not attempt to disrupt, scan or gain unauthorised access to this website, scrape it
-              at scale, or misrepresent an association with SYIT. Content on this site is provided for
-              information only.
+              at scale, or misrepresent an association with SYIT. Content on this site is provided
+              for information only.
             </p>
 
             <h2>12. Termination</h2>
@@ -127,8 +132,15 @@ function TermsPage() {
 
             <h2>14. Contact</h2>
             <p>
-              Questions about these terms? <Link to="/contact" style={{ color: "var(--blue)" }}>Contact us</Link>{" "}
-              or read our <Link to="/privacy" style={{ color: "var(--blue)" }}>privacy policy</Link>.
+              Questions about these terms?{" "}
+              <Link to="/contact" style={{ color: "var(--blue)" }}>
+                Contact us
+              </Link>{" "}
+              or read our{" "}
+              <Link to="/privacy" style={{ color: "var(--blue)" }}>
+                privacy policy
+              </Link>
+              .
             </p>
           </div>
         </div>

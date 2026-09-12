@@ -20,7 +20,11 @@ export function PageHero({
         </div>
         <h1 className="reveal">{title}</h1>
         {intro ? <p className="reveal">{intro}</p> : null}
-        {meta ? <div className="reveal" style={{ marginTop: 28 }}>{meta}</div> : null}
+        {meta ? (
+          <div className="reveal" style={{ marginTop: 28 }}>
+            {meta}
+          </div>
+        ) : null}
       </div>
     </section>
   );

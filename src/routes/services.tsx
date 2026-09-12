@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FinalCta } from "@/components/site/FinalCta";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -15,7 +16,8 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — SYIT Security Consultancy" },
       {
         property: "og:description",
-        content: "Audits, privacy programmes, identity hardening, compliance readiness and incident support.",
+        content:
+          "Audits, privacy programmes, identity hardening, compliance readiness and incident support.",
       },
     ],
   }),
@@ -27,31 +29,56 @@ const services = [
     n: "01",
     title: "Startup security audit",
     body: "Infrastructure, cloud configuration, codebase and access review, delivered as a prioritised remediation plan with effort estimates.",
-    includes: ["Cloud & network review", "Secrets and CI/CD hygiene", "Application logic testing", "Remediation walkthrough"],
+    includes: [
+      "Cloud & network review",
+      "Secrets and CI/CD hygiene",
+      "Application logic testing",
+      "Remediation walkthrough",
+    ],
   },
   {
     n: "02",
     title: "Data privacy consulting",
     body: "Understand exactly what personal data you hold, why, where it lives and how long it stays — then reduce it.",
-    includes: ["Data inventory & flow maps", "Retention & deletion rules", "Consent and notice drafting", "Vendor / processor review"],
+    includes: [
+      "Data inventory & flow maps",
+      "Retention & deletion rules",
+      "Consent and notice drafting",
+      "Vendor / processor review",
+    ],
   },
   {
     n: "03",
     title: "Identity & access control",
     body: "Account takeover is the most common cause of loss. We make identity the strongest part of your stack.",
-    includes: ["MFA & passkey rollout", "Privilege and role audit", "Offboarding process", "Zero-trust access policy"],
+    includes: [
+      "MFA & passkey rollout",
+      "Privilege and role audit",
+      "Offboarding process",
+      "Zero-trust access policy",
+    ],
   },
   {
     n: "04",
     title: "Compliance readiness",
     body: "Gap analysis and implementation support for GDPR, India's DPDP Act, ISO 27001 and SOC 2 style customer reviews.",
-    includes: ["Gap assessment", "Policy set drafting", "Evidence collection", "Questionnaire support"],
+    includes: [
+      "Gap assessment",
+      "Policy set drafting",
+      "Evidence collection",
+      "Questionnaire support",
+    ],
   },
   {
     n: "05",
     title: "AI & data pipeline security",
     body: "For teams building with LLMs: prompt injection testing, model access control and training-data governance.",
-    includes: ["Adversarial testing", "Model & key access control", "PII in prompts review", "Pipeline hardening"],
+    includes: [
+      "Adversarial testing",
+      "Model & key access control",
+      "PII in prompts review",
+      "Pipeline hardening",
+    ],
   },
   {
     n: "06",
@@ -63,6 +90,7 @@ const services = [
 
 function ServicesPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>

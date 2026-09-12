@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { FinalCta } from "@/components/site/FinalCta";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -47,6 +48,7 @@ const values = [
 
 function AboutPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>
@@ -83,28 +85,39 @@ function AboutPage() {
               <strong>01</strong>
               <div>
                 <h3>Discovery call</h3>
-                <p>A short, free conversation to understand your setup, your risks and your deadlines.</p>
+                <p>
+                  A short, free conversation to understand your setup, your risks and your
+                  deadlines.
+                </p>
               </div>
             </div>
             <div className="step">
               <strong>02</strong>
               <div>
                 <h3>Assessment</h3>
-                <p>We review infrastructure, accounts, data flows and policies, and reproduce real issues.</p>
+                <p>
+                  We review infrastructure, accounts, data flows and policies, and reproduce real
+                  issues.
+                </p>
               </div>
             </div>
             <div className="step">
               <strong>03</strong>
               <div>
                 <h3>Prioritised plan</h3>
-                <p>Every finding gets an impact rating, a fix, and an effort estimate — ordered by what matters.</p>
+                <p>
+                  Every finding gets an impact rating, a fix, and an effort estimate — ordered by
+                  what matters.
+                </p>
               </div>
             </div>
             <div className="step">
               <strong>04</strong>
               <div>
                 <h3>Fix &amp; verify</h3>
-                <p>We support remediation, then re-test to confirm each issue is genuinely closed.</p>
+                <p>
+                  We support remediation, then re-test to confirm each issue is genuinely closed.
+                </p>
               </div>
             </div>
           </div>

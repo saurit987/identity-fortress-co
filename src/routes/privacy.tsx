@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -12,7 +13,10 @@ export const Route = createFileRoute("/privacy")({
           "How SYIT collects, uses, stores and protects personal data, your rights under GDPR and India's DPDP Act, and how to contact us.",
       },
       { property: "og:title", content: "Privacy Policy — SYIT" },
-      { property: "og:description", content: "What data we collect, why, how long we keep it, and your rights." },
+      {
+        property: "og:description",
+        content: "What data we collect, why, how long we keep it, and your rights.",
+      },
       { name: "robots", content: "index,follow" },
     ],
   }),
@@ -21,6 +25,7 @@ export const Route = createFileRoute("/privacy")({
 
 function PrivacyPage() {
   useReveal();
+  useScrollStory();
 
   return (
     <>
@@ -38,7 +43,10 @@ function PrivacyPage() {
             <p>
               SYIT ("we", "us") is a cybersecurity and data privacy consultancy serving startups and
               individuals. For any privacy question, write to{" "}
-              <a href="mailto:privacy@syit.io" style={{ color: "var(--blue)" }}>privacy@syit.io</a>.
+              <a href="mailto:privacy@syit.io" style={{ color: "var(--blue)" }}>
+                privacy@syit.io
+              </a>
+              .
             </p>
 
             <h2>2. What we collect</h2>
@@ -77,8 +85,8 @@ function PrivacyPage() {
             <p>
               Enquiries that do not become engagements are deleted within 12 months. Engagement
               records, including technical findings, are retained for up to 3 years for legal and
-              professional-liability reasons, then deleted or anonymised. Server logs are kept for up
-              to 90 days.
+              professional-liability reasons, then deleted or anonymised. Server logs are kept for
+              up to 90 days.
             </p>
 
             <h2>6. Sharing and processors</h2>
@@ -97,8 +105,8 @@ function PrivacyPage() {
 
             <h2>8. International transfers</h2>
             <p>
-              Where data is processed outside your country, we rely on appropriate safeguards such as
-              standard contractual clauses with our providers.
+              Where data is processed outside your country, we rely on appropriate safeguards such
+              as standard contractual clauses with our providers.
             </p>
 
             <h2>9. Your rights</h2>
@@ -110,8 +118,10 @@ function PrivacyPage() {
             </p>
             <p>
               To exercise any right, email{" "}
-              <a href="mailto:privacy@syit.io" style={{ color: "var(--blue)" }}>privacy@syit.io</a>. We
-              respond within 30 days.
+              <a href="mailto:privacy@syit.io" style={{ color: "var(--blue)" }}>
+                privacy@syit.io
+              </a>
+              . We respond within 30 days.
             </p>
 
             <h2>10. Security</h2>
@@ -122,8 +132,8 @@ function PrivacyPage() {
 
             <h2>11. Children</h2>
             <p>
-              Our services are not directed at children. We do not knowingly collect data from anyone
-              under 18 without a parent or guardian's involvement.
+              Our services are not directed at children. We do not knowingly collect data from
+              anyone under 18 without a parent or guardian's involvement.
             </p>
 
             <h2>12. Changes</h2>
@@ -134,8 +144,15 @@ function PrivacyPage() {
 
             <h2>13. Contact</h2>
             <p>
-              Questions about this notice? <Link to="/contact" style={{ color: "var(--blue)" }}>Get in touch</Link>{" "}
-              or read our <Link to="/terms" style={{ color: "var(--blue)" }}>terms &amp; conditions</Link>.
+              Questions about this notice?{" "}
+              <Link to="/contact" style={{ color: "var(--blue)" }}>
+                Get in touch
+              </Link>{" "}
+              or read our{" "}
+              <Link to="/terms" style={{ color: "var(--blue)" }}>
+                terms &amp; conditions
+              </Link>
+              .
             </p>
           </div>
         </div>

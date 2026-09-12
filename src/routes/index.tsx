@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/components/site/useReveal";
+import { useScrollStory } from "@/lib/useScrollStory";
 import { FinalCta } from "@/components/site/FinalCta";
 
 export const Route = createFileRoute("/")({
@@ -57,6 +58,7 @@ const services = [
 
 function Index() {
   useReveal();
+  useScrollStory();
 
   return (
     <>
@@ -196,8 +198,8 @@ function Index() {
               </h2>
             </div>
             <p>
-              No security theatre. No giant reports nobody reads. Just practical work designed around
-              how your infrastructure — or your personal setup — actually operates.
+              No security theatre. No giant reports nobody reads. Just practical work designed
+              around how your infrastructure — or your personal setup — actually operates.
             </p>
           </div>
 
